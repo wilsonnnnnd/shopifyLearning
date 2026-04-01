@@ -1,21 +1,40 @@
 <div class="wm-product-benefits">
-  <h2 class="wm-benefits-title">
-    {{ section.settings.title }}
-  </h2>
+  <h2 class="wm-benefits-title">{{ section.settings.title }}</h2>
 
-  <div class="wm-benefits-list">
+  <ul class="wm-benefits-list" role="list">
     {% if section.settings.benefit1 != blank %}
-      <div class="wm-benefit-item">✔ {{ section.settings.benefit1 }}</div>
+      <li class="wm-benefit-item">
+        <span class="wm-benefit-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="wm-benefit-text">{{ section.settings.benefit1 }}</span>
+      </li>
     {% endif %}
 
     {% if section.settings.benefit2 != blank %}
-      <div class="wm-benefit-item">✔ {{ section.settings.benefit2 }}</div>
+      <li class="wm-benefit-item">
+        <span class="wm-benefit-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 12h3l3-6 6 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="wm-benefit-text">{{ section.settings.benefit2 }}</span>
+      </li>
     {% endif %}
 
     {% if section.settings.benefit3 != blank %}
-      <div class="wm-benefit-item">✔ {{ section.settings.benefit3 }}</div>
+      <li class="wm-benefit-item">
+        <span class="wm-benefit-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2v6M12 22v-6M4.9 4.9l4.2 4.2M19.1 19.1l-4.2-4.2M2 12h6M22 12h-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="wm-benefit-text">{{ section.settings.benefit3 }}</span>
+      </li>
     {% endif %}
-  </div>
+  </ul>
 </div>
 
 {% schema %}

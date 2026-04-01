@@ -1142,6 +1142,80 @@ h5,
   animation: tag-pulse 1.6s ease-in-out infinite;
 }
 
+/* Product Benefits section styles */
+.wm-product-benefits {
+  background: color-mix(in srgb, var(--color-background) 96%, transparent);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 18px 0;
+  box-shadow: 0 6px 18px rgba(10, 20, 30, 0.04);
+}
+.wm-benefits-title {
+  margin: 0 0 12px 0;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  color: var(--color-foreground);
+  font-weight: 600;
+}
+.wm-benefits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px;
+}
+.wm-benefit-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: transparent;
+  transition: background 180ms ease, transform 180ms ease;
+}
+.wm-benefit-item:hover {
+  background: color-mix(in srgb, var(--color-foreground) 4%, transparent);
+  transform: translateY(-2px);
+}
+.wm-benefit-icon {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  box-shadow: 0 2px 6px rgba(10,20,30,0.06);
+  color: var(--color-primary, #0a7);
+}
+.wm-benefit-icon svg {
+  width: 18px;
+  height: 18px;
+}
+.wm-benefit-text {
+  display: block;
+  color: var(--color-foreground);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 900px) {
+  .wm-benefits-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .wm-benefits-list {
+    grid-template-columns: 1fr;
+  }
+  .wm-product-benefits {
+    padding: 14px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   input.h5.h5,
   textarea.h5.h5,
@@ -4512,29 +4586,4 @@ product-recommendations:has([data-has-recommendations='false']) {
     opacity: var(--atc-opacity, 1);
     translate: 0px var(--atc-destination, 0px);
   }
-}
-
-.wm-product-benefits {
-  margin: 32px 0;
-  padding: 20px;
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  background: #fafafa;
-}
-
-.wm-benefits-title {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.wm-benefits-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.wm-benefit-item {
-  font-size: 14px;
-  line-height: 1.6;
 }
