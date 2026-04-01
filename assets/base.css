@@ -131,6 +131,20 @@ body {
   }
 }
 
+/* Rounded corners for product / collection images */
+.section-resource-list .product-card__image,
+.section-resource-list .collection-card__image,
+.section-resource-list .card-gallery,
+.section-resource-list .product-media,
+.section-resource-list .product-card__image img,
+.section-resource-list .collection-card__image img,
+.section-resource-list .card-gallery img,
+.section-resource-list .product-media img {
+  border-radius: 10px;
+  overflow: hidden;
+  display: block;
+}
+
 html {
   /* Firefox */
   scrollbar-width: thin;
