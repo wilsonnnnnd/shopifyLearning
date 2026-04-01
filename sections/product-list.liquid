@@ -7,6 +7,8 @@
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <div
   data-testid="product-list"
+  data-section="product-list"
+  aria-label="{{ section.settings.collection.title | default: 'Product list' }}"
   class="
     section
     section--{{ section.settings.section_width }}
@@ -20,6 +22,13 @@
     {% render 'gap-style', value: section.settings.gap %}
   "
 >
+  <div class="section-top">
+    {% if section.settings.collection != blank %}
+      <h2 class="section-title">{{ section.settings.collection.title }}</h2>
+    {% else %}
+      <h2 class="section-title">Featured products</h2>
+    {% endif %}
+  </div>
   <div class="section-resource-list__header">
     {%- content_for 'block', type: '_product-list-content', id: 'static-header' -%}
   </div>
