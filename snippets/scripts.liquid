@@ -25,6 +25,7 @@
       "@theme/utilities": "{{ 'utilities.js' | asset_url }}",
       "@theme/variant-picker": "{{ 'variant-picker.js' | asset_url }}",
       "@theme/media-gallery": "{{ 'media-gallery.js' | asset_url }}",
+      "@theme/product-tags": "{{ 'product-tags.js' | asset_url }}",
       "@theme/quick-add": "{{ 'quick-add.js' | asset_url }}",
       "@theme/paginated-list-aspect-ratio": "{{ 'paginated-list-aspect-ratio.js' | asset_url }}",
       "@theme/popover-polyfill": "{{ 'popover-polyfill.js' | asset_url }}",
@@ -92,6 +93,11 @@
 <link
   rel="modulepreload"
   href="{{ 'focus.js' | asset_url }}"
+  fetchpriority="low"
+>
+<link
+  rel="modulepreload"
+  href="{{ 'product-tags.js' | asset_url }}"
   fetchpriority="low"
 >
 <link
@@ -184,6 +190,11 @@
 ></script>
 <script
   src="{{ 'product-inventory.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+<script
+  src="{{ 'product-tags.js' | asset_url }}"
   type="module"
   fetchpriority="low"
 ></script>

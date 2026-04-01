@@ -23,6 +23,7 @@
         {{- closest.product.title }}
       </a>
     </div>
+    {% render 'product-tags', product: closest.product %}
     {% content_for 'blocks' %}
   {% endcapture %}
 

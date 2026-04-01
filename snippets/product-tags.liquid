@@ -1,0 +1,25 @@
+{%- comment -%}
+  Renders product tags as styled pills with optional icons.
+  @param {object} product - The product object
+{%- endcomment -%}
+
+{%- if product and product.tags and product.tags.size > 0 -%}
+  <div class="product-tags" aria-hidden="false">
+    {%- for tag in product.tags -%}
+      {%- assign tag_down = tag | downcase -%}
+      {%- assign first_char = tag | slice: 0, 1 -%}
+      <span class="product-tag" data-tag="{{ tag_down }}">
+        {% if tag_down contains 'new' %}
+          <span class="product-tag__icon" aria-hidden="true">★</span>
+        {% elsif tag_down contains 'sale' or tag_down contains 'discount' %}
+          <span class="product-tag__icon" aria-hidden="true">％</span>
+        {% elsif tag_down contains 'limited' or tag_down contains 'exclusive' %}
+          <span class="product-tag__icon" aria-hidden="true">⌛</span>
+        {% else %}
+          <span class="product-tag__char" aria-hidden="true">{{ first_char }}</span>
+        {% endif %}
+        <span class="product-tag__label">{{ tag }}</span>
+      </span>
+    {%- endfor -%}
+  </div>
+{%- endif -%}
