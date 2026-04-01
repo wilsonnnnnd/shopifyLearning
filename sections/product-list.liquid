@@ -23,11 +23,27 @@
   "
 >
   <div class="section-top">
-    {% if section.settings.collection != blank %}
-      <h2 class="section-title">{{ section.settings.collection.title }}</h2>
-    {% else %}
-      <h2 class="section-title">Featured products</h2>
-    {% endif %}
+    <div class="section-title-wrap">
+      {% if section.settings.collection != blank %}
+        <h2 class="section-title">{{ section.settings.collection.title }}</h2>
+      {% else %}
+        <h2 class="section-title">Featured products</h2>
+      {% endif %}
+    </div>
+
+    <div class="section-actions">
+      {% if section.settings.collection != blank %}
+        <a
+          href="{{ section.settings.collection.url }}"
+          class="link section-view-all"
+          aria-label="{{ 't:text_defaults.view_all_button_label' | t }}"
+        >
+          {{ 't:text_defaults.view_all_button_label' | t }}
+        </a>
+      {% else %}
+        <a href="#" class="link section-view-all">{{ 't:text_defaults.view_all_button_label' | t }}</a>
+      {% endif %}
+    </div>
   </div>
   <div class="section-resource-list__header">
     {%- content_for 'block', type: '_product-list-content', id: 'static-header' -%}

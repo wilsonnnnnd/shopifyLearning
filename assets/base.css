@@ -25,6 +25,112 @@ body {
   --submenu-animation-easing: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
+/* Product list section UI tweaks */
+.section-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--color-foreground);
+  font-weight: 600;
+}
+
+.section-resource-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.section-resource-list .resource-list__item {
+  padding: 8px;
+}
+
+@media (max-width: 900px) {
+  .section-resource-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+  }
+}
+
+/* Actions (view-all) alignment */
+.section-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-actions .section-view-all {
+  white-space: nowrap;
+}
+
+/* View all button appearance */
+.section-view-all {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-foreground);
+  border: 1px solid transparent;
+  transition: background-color 160ms ease, color 160ms ease, transform 120ms ease;
+  text-decoration: none;
+}
+
+.section-view-all:hover,
+.section-view-all:focus {
+  background: color-mix(in srgb, var(--color-foreground) 8%, transparent);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.section-view-all:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-foreground) 12%, transparent);
+}
+
+/* Product card tweaks */
+.section-resource-list .resource-list__item {
+  background: color-mix(in srgb, var(--color-background) 95%, transparent);
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.section-resource-list .resource-list__item:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transform: translateY(-4px);
+}
+
+.section-resource-list .resource-list__item .product-card__content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Responsive: single column on very small viewports */
+@media (max-width: 480px) {
+  .section-resource-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .section-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
 html {
   /* Firefox */
   scrollbar-width: thin;
