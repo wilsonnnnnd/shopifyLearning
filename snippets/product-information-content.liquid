@@ -314,4 +314,56 @@
   body:has(#header-group #header-component[data-sticky-state='active']) .product-details.sticky-content--desktop {
     --sticky-header-offset: var(--header-height);
   }
+
+  /* Custom UI improvements: spacing, media treatment, details layout */
+  .product-information__grid {
+    gap: calc(var(--gap) * 1.15);
+  }
+
+  .product-information__media {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    background: var(--color-background-secondary);
+  }
+
+  .product-information__media img,
+  .product-information__media .product-media-gallery__placeholder-image {
+    border-radius: 12px;
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .product-details {
+    padding: calc(var(--padding-lg) * 0.6);
+    gap: 12px;
+  }
+
+  .product-details .price {
+    font-size: 1.15rem;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* Improve product form spacing */
+  .product-details .product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Make thumbnails more prominent */
+  .product-media-gallery__thumbnails img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  /* Slightly larger add-to-cart on desktop */
+  @media screen and (min-width: 750px) {
+    .product-details .add-to-cart-button.button {
+      padding: 12px 18px;
+      font-size: 1rem;
+    }
+  }
 {% endstylesheet %}

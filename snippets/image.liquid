@@ -24,6 +24,15 @@
 
   {% assign style_value = style | default: '' %}
 
+  {%- assign class_value = class | default: '' -%}
+  {%- unless class_value contains 'rounded-image' -%}
+    {%- if class_value == '' -%}
+      {%- assign class_value = 'rounded-image' -%}
+    {%- else -%}
+      {%- assign class_value = class_value | append: ' rounded-image' -%}
+    {%- endif -%}
+  {%- endunless -%}
+
   {% if unset_image_tag %}
     {% assign style_value = style_value | append: 'object-position: inherit;' %}
   {% endif %}
@@ -31,7 +40,7 @@
   {{
     image
     | image_url: height: image_height
-    | image_tag: class: class, srcset: image_srcset, style: style_value, alt: image_alt_text
+    | image_tag: class: class_value, srcset: image_srcset, style: style_value, alt: image_alt_text, loading: 'lazy', decoding: 'async'
   }}
 {% elsif text_fallback %}
   {{ text_fallback }}

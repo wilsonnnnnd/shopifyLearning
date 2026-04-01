@@ -117,6 +117,14 @@ body {
   gap: 8px;
 }
 
+/* Global helper for rounded images when applied via snippets/image.liquid */
+.rounded-image {
+  border-radius: 10px;
+  overflow: hidden;
+  display: block;
+  -webkit-backface-visibility: hidden;
+}
+
 /* Responsive: single column on very small viewports */
 @media (max-width: 480px) {
   .section-resource-list {
