@@ -1,0 +1,56 @@
+<div class="wm-product-benefits">
+  <h2 class="wm-benefits-title">
+    {{ section.settings.title }}
+  </h2>
+
+  <div class="wm-benefits-list">
+    {% if section.settings.benefit1 != blank %}
+      <div class="wm-benefit-item">✔ {{ section.settings.benefit1 }}</div>
+    {% endif %}
+
+    {% if section.settings.benefit2 != blank %}
+      <div class="wm-benefit-item">✔ {{ section.settings.benefit2 }}</div>
+    {% endif %}
+
+    {% if section.settings.benefit3 != blank %}
+      <div class="wm-benefit-item">✔ {{ section.settings.benefit3 }}</div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Why choose this product"
+    },
+    {
+      "type": "text",
+      "id": "benefit1",
+      "label": "Benefit 1",
+      "default": "High quality materials"
+    },
+    {
+      "type": "text",
+      "id": "benefit2",
+      "label": "Benefit 2",
+      "default": "Fast shipping across Australia"
+    },
+    {
+      "type": "text",
+      "id": "benefit3",
+      "label": "Benefit 3",
+      "default": "30-day easy returns"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Benefits"
+    }
+  ]
+}
+{% endschema %}

@@ -4513,3 +4513,28 @@ product-recommendations:has([data-has-recommendations='false']) {
     translate: 0px var(--atc-destination, 0px);
   }
 }
+
+.wm-product-benefits {
+  margin: 32px 0;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.wm-benefits-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.wm-benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wm-benefit-item {
+  font-size: 14px;
+  line-height: 1.6;
+}
