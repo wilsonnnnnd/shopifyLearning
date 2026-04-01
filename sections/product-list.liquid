@@ -34,14 +34,14 @@
     <div class="section-actions">
       {% if section.settings.collection != blank %}
         <a
-          href="{{ section.settings.collection.url }}"
-          class="link section-view-all"
-          aria-label="{{ 't:text_defaults.view_all_button_label' | t }}"
-        >
-          {{ 't:text_defaults.view_all_button_label' | t }}
-        </a>
+            href="{{ section.settings.collection.url }}"
+            class="link section-view-all"
+            aria-label="{{ 'text_defaults.view_all_button_label' | t }}"
+          >
+            {{ 'text_defaults.view_all_button_label' | t }}
+          </a>
       {% else %}
-        <a href="#" class="link section-view-all">{{ 't:text_defaults.view_all_button_label' | t }}</a>
+        <a href="#" class="link section-view-all">{{ 'text_defaults.view_all_button_label' | t }}</a>
       {% endif %}
     </div>
   </div>
