@@ -1,67 +1,67 @@
-# Shopify 主题 (本仓库)
+# Shopify Theme (this repository)
 
-这是一个基于 Shopify 的主题仓库，包含主题资源（assets）、区块与区段（sections、blocks）、片段（snippets）、布局与模板等，用于在线商店的前端展示与交互逻辑。
+This repository contains a Shopify theme with frontend assets, sections and blocks, reusable Liquid snippets, templates, layouts, and localization files used to build and run an online store.
 
-## 目录概览
+## Directory overview
 
-- `assets/`: JS、CSS、图片、字体等静态资源和前端逻辑。
-- `sections/`, `blocks/`: 可组合的主题区段与区块。
-- `snippets/`: 可重用的 Liquid 片段。
-- `templates/`, `layout/`, `config/`, `locales/`: 主题模板、布局、配置与本地化文件。
+- `assets/`: JavaScript, CSS, images, fonts and other frontend assets and logic.
+- `sections/`, `blocks/`: Composable theme sections and blocks.
+- `snippets/`: Reusable Liquid snippets.
+- `templates/`, `layout/`, `config/`, `locales/`: Theme templates, layouts, configuration and localization files.
 
-（仓库中还有更多文件与子目录，请根据需要查看对应目录。）
+There are additional files and folders in the repository—please inspect the relevant directories for more details.
 
-## 快速开始（开发者）
+## Quick start (developer)
 
-先决条件：
+Prerequisites:
 
-- Node.js (推荐 LTS)
-- npm 或 yarn
-- Shopify CLI（用于本地预览与推送） — 可选但推荐
+- Node.js (LTS recommended)
+- `npm` or `yarn`
+- Shopify CLI (optional but recommended for local preview and deployment)
 
-1. 安装依赖（如存在 `package.json`）：
+1. Install dependencies (if a `package.json` exists):
 
 ```bash
 npm install
-# 或
+# or
 yarn
 ```
 
-2. 本地开发预览（使用 Shopify CLI）：
+2. Run local development preview (Shopify CLI):
 
 ```bash
 shopify theme dev
 ```
 
-如果项目使用前端构建工具，请运行相应的脚本（例如 `npm run build` / `npm run watch`）。
+If the project uses a frontend build tool, run the corresponding script (for example `npm run build` or `npm run watch`).
 
-## 构建与部署
+## Build & deploy
 
-- 本地构建：`npm run build`（如存在脚本）
-- 推送到主题（使用 Shopify CLI）：
+- Local build: `npm run build` (if available)
+- Push the theme to Shopify (Shopify CLI):
 
 ```bash
 shopify theme push
 ```
 
-或使用 CI/CD 将构建产物部署到 Shopify
+Or integrate the build and deployment into CI/CD to deploy artifacts to Shopify.
 
-## 代码风格与提示
+## Code style & editor hints
 
-- 本仓库包含 `jsconfig.json` 与 `global.d.ts`（若存在），用于编辑器智能感知与类型提示。
-- 请尽量保持 JavaScript/ Liquid 的可读性与可复用性，提交前运行 linters/格式化工具（若配置）。
+- This repository includes `jsconfig.json` and `global.d.ts` (if present) to improve editor IntelliSense and type hints.
+- Keep JavaScript and Liquid code readable and reusable. Run linters/formatters before committing if configured.
 
-## 贡献
+## Contributing
 
-欢迎提交 issue 或 PR：
+Contributions are welcome via issues and pull requests:
 
-- 新功能/改进：Fork -> 新分支 -> PR
-- Bug 修复：请提供可复现步骤与相关日志
+- Feature or enhancement: Fork -> branch -> PR
+- Bug fix: Please provide reproduction steps and any relevant logs
 
-## 联系
+## Contact
 
-如果需要帮助或进一步定制，请在仓库中创建 issue，或联系维护者。
+Create an issue in this repository for help or to request customizations.
 
 ---
 
-该 README 为通用模板。需要我把其中的 `shopify theme dev`、构建脚本或其它细节根据仓库实际设置定制化吗？
+This README is a generic template — would you like me to customize the `shopify theme dev` command, build scripts, or other details based on this repository's configuration?
