@@ -229,7 +229,7 @@
                 "text": "{{ closest.product.description }}",
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "rte",
                 "font": "var(--font-primary--family)",
                 "font_size": "",
