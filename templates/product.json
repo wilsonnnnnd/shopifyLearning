@@ -259,11 +259,11 @@
         }
       },
       "settings": {
-        "content_width": "content-center-aligned",
+        "content_width": "content-full-width",
         "desktop_media_position": "left",
         "equal_columns": false,
         "limit_details_width": false,
-        "gap": 48,
+        "gap": 28,
         "enable_sticky_add_to_cart": true,
         "color_scheme": "",
         "padding-block-start": 0,
@@ -410,10 +410,21 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "product_benefits_mUiKNf": {
+      "type": "product-benefits",
+      "name": "Product Benefits",
+      "settings": {
+        "title": "Why choose this product",
+        "benefit1": "High quality materials",
+        "benefit2": "Fast shipping across Australia",
+        "benefit3": "30-day easy returns"
+      }
     }
   },
   "order": [
     "main",
-    "product_recommendations_qggXJq"
+    "product_recommendations_qggXJq",
+    "product_benefits_mUiKNf"
   ]
 }
