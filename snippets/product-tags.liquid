@@ -5,14 +5,43 @@
 
 {%- if product and product.tags and product.tags.size > 0 -%}
   <div class="product-tags" aria-hidden="false">
+    {%- assign urgent_threshold = 5 -%}
+    {%- assign is_urgent = false -%}
+    {%- if product and product.total_inventory != blank -%}
+      {%- if product.total_inventory <= urgent_threshold -%}
+        {%- assign is_urgent = true -%}
+      {%- endif -%}
+    {%- else -%}
+      {%- for variant in product.variants -%}
+        {%- if variant.inventory_quantity != blank and variant.inventory_quantity <= urgent_threshold -%}
+          {%- assign is_urgent = true -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+
     {%- for tag in product.tags -%}
       {%- assign tag_down = tag | downcase -%}
       {%- assign first_char = tag | slice: 0, 1 -%}
-      <span class="product-tag" data-tag="{{ tag_down }}">
+      {%- assign tag_class = '' -%}
+      {%- if tag_down contains 'best' and tag_down contains 'seller' or tag_down == 'bestseller' or tag_down == 'best-seller' -%}
+        {%- assign tag_class = 'product-tag--best-seller' -%}
+      {%- elsif tag_down contains 'fast' and tag_down contains 'ship' or tag_down == 'fast-shipping' or tag_down == 'fastshipping' -%}
+        {%- assign tag_class = 'product-tag--fast-shipping' -%}
+      {%- elsif tag_down contains 'new' or tag_down contains 'arrival' or tag_down == 'new-arrival' -%}
+        {%- assign tag_class = 'product-tag--new-arrival' -%}
+      {%- elsif tag_down contains 'low' and tag_down contains 'stock' or tag_down == 'low-stock' or tag_down == 'lowstock' -%}
+        {%- assign tag_class = 'product-tag--low-stock' -%}
+        {%- if is_urgent -%}
+          {%- assign tag_class = tag_class | append: ' urgent' -%}
+        {%- endif -%}
+      {%- endif -%}
+
+      <span class="product-tag {{ tag_class }}" data-tag="{{ tag_down }}">
         {% if tag_down contains 'new' %}
-          <span class="product-tag__icon" aria-hidden="true">★</span>
+          <span class="product-tag__icon" aria-hidden="true"> % </span>
         {% elsif tag_down contains 'sale' or tag_down contains 'discount' %}
-          <span class="product-tag__icon" aria-hidden="true">％</span>
+          <span class="product-tag__icon" aria-hidden="true">⚡</span>
         {% elsif tag_down contains 'limited' or tag_down contains 'exclusive' %}
           <span class="product-tag__icon" aria-hidden="true">⌛</span>
         {% else %}
